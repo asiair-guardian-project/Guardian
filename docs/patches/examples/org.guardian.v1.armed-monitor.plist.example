@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<!--
+  EXAMPLE ONLY - not installed by any patch.
+  Replaces org.guardian.v1.monitor (the watch-only monitor). Only ONE of the two
+  can run: the second to start refuses because the operator socket is taken.
+  As written this is armed-CAPABLE but cannot cut power: hardware stays OFF.
+  To let ARM become available, add these two lines to ProgramArguments:
+      <string>--enable-hardware-execution</string><string>YES_CUT_POWER</string>
+  (and only after commissioning is signed off; see PATCH_6 notes).
+-->
+<plist version="1.0">
+<dict>
+	<key>KeepAlive</key>
+	<dict><key>SuccessfulExit</key><false/></dict>
+	<key>ThrottleInterval</key>
+	<integer>10</integer>
+	<key>Label</key>
+	<string>org.guardian.v1.monitor</string>
+	<key>ProgramArguments</key>
+	<array>
+		<string>/Users/YOUR_USER/ObservatorySupervisor/.venv/bin/python</string>
+		<string>/Users/YOUR_USER/ObservatorySupervisor/guardian_v1_armed.py</string>
+		<string>--recovery-file</string>
+		<string>/Users/YOUR_USER/Library/Application Support/GuardianV1/recovery.json</string>
+		<string>--operator-socket</string>
+		<string>/Users/YOUR_USER/Library/Application Support/GuardianV1/operator.sock</string>
+		<string>--asiair-host</string>
+		<string>192.168.1.20</string>
+		<string>--alpaca-host</string>
+		<string>alpaca-api.tx.starfront.space</string>
+		<string>--alpaca-port</string>
+		<string>443</string>
+		<string>--alpaca-device</string>
+		<string>17</string>
+		<string>--kasa-host</string>
+		<string>192.168.1.30</string>
+		<string>--cycle-seconds</string>
+		<string>5</string>
+		<string>--installation-config</string>
+		<string>/Users/YOUR_USER/ObservatorySupervisor/config/config.yaml</string>
+		<string>--commissioning-record</string>
+		<string>/Users/YOUR_USER/Library/Application Support/GuardianV1/commissioning-record.json</string>
+		<string>--ups-low-battery-percent</string>
+		<string>35</string>
+		<string>--ups-unreadable-grace-seconds</string>
+		<string>900</string>
+		<string>--alert-level</string>
+		<string>off</string>
+	</array>
+	<key>RunAtLoad</key>
+	<true/>
+	<key>StandardErrorPath</key>
+	<string>/Users/YOUR_USER/Library/Application Support/GuardianV1/monitor_stderr.log</string>
+	<key>StandardOutPath</key>
+	<string>/Users/YOUR_USER/Library/Application Support/GuardianV1/monitor_stdout.log</string>
+	<key>WorkingDirectory</key>
+	<string>/Users/YOUR_USER/ObservatorySupervisor</string>
+</dict>
+</plist>

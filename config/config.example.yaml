@@ -1,0 +1,50 @@
+# Example only. The setup wizard (guardian_v1_setup_web.py) writes your real config;
+# you normally do not edit this by hand. Replace every address with your own.
+system:
+  name: My Observatory
+  log_level: INFO
+
+guardian:
+  version: "1.0"
+
+session:
+  active_on_startup: false
+
+network:
+  internet_test_url: "https://www.apple.com"
+  timeout_seconds: 5
+
+asiair:
+  ip_address: "192.168.1.20"
+  timeout_seconds: 2
+
+kasa:
+  power_strip_ip: "192.168.1.30"
+
+roof:
+  source: "alpaca"
+  status_file: "tests/current_roof_status.txt"
+  stale_after_seconds: null
+  alpaca_host: "roof-safety.example.org"
+  alpaca_port: 443
+  alpaca_device_number: 0
+  alpaca_timeout_seconds: 5
+
+notifications:
+  enabled: true
+  minimum_level: WARNING
+  pushover_enabled: false
+  
+monitor:
+  interval_seconds: 5
+
+control:
+  command_file: "guardian_control.txt"
+  status_file: "guardian_status.json"
+  alert_file: "guardian_alert.json"
+  emergency_state_file: "guardian_emergency_state.json"
+wave:
+  host: "192.168.4.1"
+  port: 11880
+  timeout_seconds: 3
+  motion_sample_interval_seconds: 2

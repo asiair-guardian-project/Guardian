@@ -1,0 +1,14 @@
+# private to each operator
+config/config.yaml
+config/config.guardian-candidate.yaml
+config/*.local.yaml
+logs/
+.venv/
+__pycache__/
+*.pyc
+guardian_status.json
+guardian_alert.json
+guardian_emergency_state.json
+guardian_control.txt
+*.pre-*
+.DS_Store

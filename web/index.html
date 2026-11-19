@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Guardian 1.0</title>
+<link rel="stylesheet" href="/app.css">
+</head>
+<body>
+<header>
+  <h1>Guardian 1.0</h1>
+  <p class="sub">Observatory Supervisor · local status page (read-only)</p>
+</header>
+
+<div id="banner" class="banner bad" role="status">Contacting the monitor…</div>
+
+<main id="panel">
+  <section class="grid">
+    <div class="card"><h2>Session</h2><p id="session" class="big">–</p></div>
+    <div class="card"><h2>Roof</h2><p id="roof" class="big">–</p></div>
+    <div class="card"><h2>ASIAIR</h2><p id="controller" class="big">–</p></div>
+  </section>
+
+  <section class="card wide">
+    <h2>Protection</h2>
+    <p><span class="k">Power cut by this monitor</span> <span id="hardware">–</span></p>
+    <p><span class="k">ARM</span> <span id="arm">–</span></p>
+    <p id="armreason" class="warn" hidden></p>
+    <p id="recovery" class="warn" hidden></p>
+    <p id="incident" class="bad-text" hidden></p>
+    <p class="small" id="observed">–</p>
+  </section>
+
+  <section class="card wide">
+    <h2>Recent events</h2>
+    <pre id="events">–</pre>
+  </section>
+
+  <section class="card wide">
+    <h2>Recent nights</h2>
+    <pre id="nights">–</pre>
+  </section>
+</main>
+
+<footer class="small">This page only shows information. It cannot arm, disarm, acknowledge or change anything.</footer>
+<script src="/app.js"></script>
+</body>
+</html>

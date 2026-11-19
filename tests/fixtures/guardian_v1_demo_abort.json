@@ -1,0 +1,34 @@
+{
+  "abort_acknowledged": false,
+  "active_incident": {
+    "lost_capabilities": [],
+    "plan": [
+      "SAFETY_POWER_OFF_ASIAIR",
+      "SAFETY_POWER_OFF_MOUNT",
+      "SAFETY_POWER_OFF_ACCESSORIES"
+    ],
+    "records": [
+      {
+        "action": "SAFETY_POWER_OFF_ASIAIR",
+        "result": "FAILED"
+      },
+      {
+        "action": "SAFETY_POWER_OFF_MOUNT",
+        "result": "FAILED"
+      },
+      {
+        "action": "SAFETY_POWER_OFF_ACCESSORIES",
+        "result": "FAILED"
+      }
+    ],
+    "session_state": "ABORTED",
+    "triggers": [
+      "ROOF_CLOSED"
+    ]
+  },
+  "incident_history": [],
+  "recovery_required": true,
+  "schema_version": 2,
+  "session_state": "ABORTED",
+  "shutdown_clean": false
+}

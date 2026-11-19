@@ -1,0 +1,9 @@
+{
+  "schema_version": 2,
+  "active_incident": null,
+  "abort_acknowledged": false,
+  "incident_history": [],
+  "session_state": "DISARMED",
+  "shutdown_clean": true,
+  "recovery_required": false
+}
